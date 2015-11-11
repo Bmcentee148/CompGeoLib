@@ -11,8 +11,8 @@ package compgeo_lib;
 
 public class Point2D {
 	// coordinates will remain unchanged once initialized
-	protected final int X;
-	protected final int Y;
+	private final int X;
+	private final int Y;
 
 	private Point2D() {
 		// restrict access to default constructor by access modif.
@@ -25,7 +25,7 @@ public class Point2D {
 		Y = y_coord;
 	}
 
-	public void displayPoint() {
+	public void printPoint() {
 		System.out.println(this); //utilizes objects toString() method
 	}
 
