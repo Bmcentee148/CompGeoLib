@@ -21,8 +21,7 @@ public class VertexListDemo {
 
 		vList.remove();
 		vList.remove();
-		vList.remove();
-		vList.remove();
+		
 
 		Vertex[] vArr = vList.toArray(new Vertex[vList.size()]);
 		for(int i = 0; i < vArr.length; i++) {

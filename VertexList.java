@@ -10,12 +10,12 @@ public class VertexList extends LinkedList<Vertex> {
 			v.prev = v;
 		}
 		else {
-			Vertex prev = this.get(size() - 1);
-			Vertex next = this.get(0);
-			prev.next = v;
-			v.prev = prev;
-			next.prev = v;
-			v.next = next;
+			Vertex end = this.get(size() - 1);
+			Vertex head = this.get(0);
+			end.next = v;
+			v.prev = end;
+			head.prev = v;
+			v.next = head;
 		}
 		super.add(v);
 		return true;
