@@ -25,6 +25,14 @@ public class Point2D {
 		Y = y_coord;
 	}
 
+	public int getX() {
+		return X;
+	}
+
+	public int getY() {
+		return Y;
+	}
+
 	public void printPoint() {
 		System.out.println(this); //utilizes objects toString() method
 	}
