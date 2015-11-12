@@ -1,5 +1,14 @@
 package compgeo_lib;
+/*##############################################################################
+	Class Vertex -- A point where two edges meet
 
+	setEarity(boolean status) -- change status of the earity
+
+	isEar() -- access earity status
+
+	@author Brian McEntee
+	@version 1.0
+##############################################################################*/
 public class Vertex {
 	private boolean isEar;
 	private Point2D p;

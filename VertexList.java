@@ -1,4 +1,14 @@
 package compgeo_lib;
+/*##############################################################################
+	Class VertexList -- type of LinkedList that stores Vertex's in order
+
+	add(Vertex v) -- updates prev and next of head, tail, and v then adds v
+
+	remove() -- updates prev and next of new head and tail vertex and removes head
+
+	@author Brian McEntee
+	@version 1.0
+##############################################################################*/
 import java.util.LinkedList;
 
 public class VertexList extends LinkedList<Vertex> {
