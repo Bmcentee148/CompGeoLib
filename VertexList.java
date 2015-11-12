@@ -47,5 +47,5 @@ public class VertexList extends LinkedList<Vertex> {
 		}
 		return removed;
 	}
-
+	
 }

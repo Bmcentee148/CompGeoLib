@@ -37,7 +37,7 @@ public class Vertex {
 
 	@Override
 	public String toString() {
-		return p.toString();
+		return p.toString() + ( (isEar) ? " ear":" not ear" );
 	}
 
 }

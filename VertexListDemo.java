@@ -11,12 +11,12 @@ public class VertexListDemo {
 		Point2D p5 = new Point2D(1,1);
 		Point2D p6 = new Point2D(5,5);
 		Point2D p7 = new Point2D(9,9);
-		System.out.println(CGTools.area2(p5,p6,p7));
-		System.out.println(CGTools.collinear(p5,p6,p7)); //true
 
+		System.out.println(CGTools.area2(p5,p6,p7)); //0.0
+		System.out.println(CGTools.collinear(p5,p6,p7)); //true
 		System.out.println(CGTools.left(p1,p2,p4)); //false
 		System.out.println(CGTools.left(p1,p3,p2)); //true
-		System.out.println(CGTools.area2(p2,p1,p3)); //true
+		System.out.println(CGTools.area2(p2,p1,p3)); //1.0
 		System.out.println(CGTools.left(p2,p1,p3)); //true
 
 		Vertex v1 = new Vertex(p1);
@@ -34,11 +34,8 @@ public class VertexListDemo {
 		vList.remove();
 		
 
-		Vertex[] vArr = vList.toArray(new Vertex[vList.size()]);
-		for(int i = 0; i < vArr.length; i++) {
-			System.out.println(vArr[i]);
-			System.out.println("Prev: " + vArr[i].prev);
-			System.out.println("Next: " + vArr[i].next);
-		}
+		CG_TestTools.printVertexList(vList);
+	
 	}
+
 }

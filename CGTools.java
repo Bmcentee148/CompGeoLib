@@ -3,7 +3,7 @@ package compgeo_lib;
 	Class CGTools -- a helper class for use with Points, Vertexes, and Polys
 
 	area2(Point2D a, Point2D b, Point2D c) -- returns twice the signed area of 
-	the triangle represented
+	the triangle represented. pos if ccw, neg if cw
 	
 	left(Point2D a, Point2D b, Point2D c) -- determines if c is left of a-b
 
@@ -25,7 +25,7 @@ public class CGTools {
 	}
 
 	public static int areaSign(Point2D a, Point2D b, Point2D c) {
-		double area = area2(a,b,c);
+		int area = (int)area2(a,b,c);
 		if(area > .5) return 1;
 		else if(area < -.5) return -1;
 		else return 0;
