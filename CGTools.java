@@ -16,7 +16,8 @@ package compgeo_lib;
 	@author Brian McEntee
 	@version 1.0
 ##############################################################################*/
-
+import java.util.Scanner;
+import java.io.*;
 public class CGTools {
 
 	public static double area2(Point2D a, Point2D b, Point2D c) {
@@ -42,6 +43,36 @@ public class CGTools {
 
 	public static boolean collinear(Point2D a, Point2D b, Point2D c) {
 		return areaSign(a,b,c) == 0;
+	}
+
+	public static boolean intersectProp(Point2D a, Point2D b, Point2D c, Point2D d) {
+		if ( collinear(a,b,c) ||
+			 collinear(a,b,d) || 
+			 collinear(c,d,a) || 
+			 collinear(c,d,b)) {
+			return false;
+		} else {
+			return (xor(left(a,b,c),left(a,b,d)) && xor(left(c,d,a),left(c,d,b)));
+		}
+	}
+
+	public static boolean xor(boolean a, boolean b) {
+		return a ^ b;
+	}
+
+	public static Point2D[] readPointsFromFile(File file) throws IOException{
+		String[] input = TF_Tools.getLines(file);
+		Point2D[] points = new Point2D[input.length];
+		for(int i = 0; i < input.length; i++) {
+			String temp = input[i].trim();
+			temp = input[i].replaceAll("\\(","");
+			temp = temp.replaceAll("\\)","");
+			String[] coords = temp.split(",");
+			int x = Integer.parseInt(coords[0]);
+			int y = Integer.parseInt(coords[1]);
+			points[i] = new Point2D(x,y);
+		}
+		return points;
 	}
 
 

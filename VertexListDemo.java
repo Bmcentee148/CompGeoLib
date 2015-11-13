@@ -1,5 +1,5 @@
 package compgeo_lib;
-
+import java.io.*;
 public class VertexListDemo {
 
 	public static void main(String[] args) {
@@ -33,9 +33,18 @@ public class VertexListDemo {
 		vList.remove();
 		vList.remove();
 		
-
 		CG_TestTools.printVertexList(vList);
-	
+
+		File tf = new File("test.txt");
+		Point2D[] points = null;
+		try {
+			points = CGTools.readPointsFromFile(tf);
+		} catch(IOException e) {
+			System.err.println("Error: " + e);
+		}
+		for(Point2D p : points)
+				System.out.println(p);
+
 	}
 
 }
