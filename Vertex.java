@@ -35,6 +35,10 @@ public class Vertex {
 		isEar = status;
 	}
 
+	public Point2D getPoint() {
+		return new Point2D(p.getX(),p.getY());
+	}
+
 	@Override
 	public String toString() {
 		return p.toString() + ( (isEar) ? " ear":" not ear" );
